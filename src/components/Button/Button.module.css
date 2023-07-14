@@ -1,0 +1,46 @@
+:root {
+  --button-primary-color: var(--black);
+  --button-primary-hover-color: #5e708d;
+}
+
+.button {
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  color: var(--purple-dark);
+
+  &:hover {
+    color: var(--purple-light);
+  }
+}
+
+.text:hover path {
+  stroke: var(--purple-light);
+}
+
+.primary {
+  color: var(--white);
+  background-color: var(--button-primary-color);
+  border: 1px solid var(--grey);
+  transition: background-color ease-in 0.1s;
+
+  &:hover {
+    background-color: var(--button-primary-hover-color);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--grey);
+  }
+}

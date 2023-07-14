@@ -1,0 +1,61 @@
+.label {
+  composes: label from "../InputField/InputField.module.css";
+}
+
+.input {
+  composes: input from "../InputField/InputField.module.css";
+  appearance: none;
+}
+
+/* cannot use above selector since we cannot control in which order CSS files got imported and selector weight is the same */
+.input.inputOverrides {
+  padding: 8px 36px;
+}
+
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button {
+  display: none;
+}
+
+.inputContainer {
+  position: relative;
+  min-width: 92px;
+}
+
+.decrease {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background-color: var(--purple-light);
+  position: absolute;
+  left: 10px;
+  top: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 17px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color ease-in 0.1s;
+
+  &::before {
+    content: "\2212";
+    height: 100%;
+    line-height: 18px;
+  }
+
+  &:hover {
+    background-color: var(--purple-dark);
+  }
+}
+
+.increase {
+  composes: decrease;
+  right: 10px;
+  left: unset;
+
+  &::before {
+    content: "\002B";
+  }
+}
