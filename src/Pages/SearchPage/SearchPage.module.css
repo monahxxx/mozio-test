@@ -66,8 +66,7 @@
 
 .addIcon {
   position: absolute;
-  left: 0;
-  padding-left: 0;
+  left: -12px;
 }
 
 .submit {
