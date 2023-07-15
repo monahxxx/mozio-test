@@ -3,8 +3,8 @@ import styles from "./SearchPage.module.css";
 import { Form, Formik } from "formik";
 import { Button } from "../../components/Button";
 import { useFormValues } from "./hooks";
-import { DestinationFields } from "./DestinationFields";
-import { FormFilters } from "./FormFilters";
+import { DestinationFields } from "./components/DestinationFields";
+import { FormFilters } from "./components/FormFilters";
 import { validationSchema } from "./validation";
 
 export const SearchPage: FC = () => {

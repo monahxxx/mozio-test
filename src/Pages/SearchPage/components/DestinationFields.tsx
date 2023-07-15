@@ -1,10 +1,10 @@
 import { FC } from "react";
 import { AddDestination } from "./AddDestination";
 import { DestinationControlItem } from "./DestinationControlItem";
-import styles from "./SearchPage.module.css";
+import styles from "./Styles.module.css";
 import { ArrayHelpers, FieldArray, useField } from "formik";
-import { FormValues } from "../../types/form";
-import { SyncStateWithUrl } from "../../components/SyncStateWithUrl";
+import { FormValues } from "../../../types/form";
+import { SyncStateWithUrl } from "../../../components/SyncStateWithUrl";
 
 export const DestinationFields: FC = () => {
   const [{ value }] = useField<FormValues["destinations"]>("destinations");
