@@ -4,10 +4,16 @@
   --black: #374151;
   --grey: #e5e7eb;
   --white: white;
+  --red: #ff0000;
 }
 
 *,
 *::after,
 &::before {
   box-sizing: border-box;
+}
+
+body {
+  font-size: 12px;
+  font-weight: 500;
 }

@@ -1,6 +1,7 @@
 import { useField } from "formik";
 import React, { FC, useId } from "react";
 import styles from "./NumberInput.module.css";
+import { InputField } from "../InputField";
 
 interface NumberInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
@@ -33,12 +34,12 @@ export const NumberInput: FC<NumberInputProps> = ({
 
       <div className={styles.inputContainer}>
         <span className={styles.decrease} onClick={decreaseHandler}></span>
-        <input
-          className={`${styles.input} ${styles.inputOverrides}`}
+        <InputField
           type="number"
           id={id}
           {...field}
           {...restProps}
+          className={styles.inputOverrides}
         />
         <span className={styles.increase} onClick={increaseHandler}></span>
       </div>

@@ -3,15 +3,26 @@
   padding: 8px 12px 8px 10px;
   border: 1px solid var(--grey);
   outline: none;
-  font-size: 12px;
-  line-height: 16px;
   width: 100%;
+  appearance: none;
+}
+
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button {
+  display: none;
+}
+
+.errorInput {
+  border-color: var(--red);
+}
+
+.error {
+  color: var(--red);
+  position: absolute;
 }
 
 .label {
   display: block;
   color: var(--black);
-  font-size: 12px;
-  font-weight: 500;
   padding-bottom: 2px;
 }

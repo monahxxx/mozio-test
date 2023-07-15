@@ -1,20 +1,5 @@
-.label {
-  composes: label from "../InputField/InputField.module.css";
-}
-
-.input {
-  composes: input from "../InputField/InputField.module.css";
-  appearance: none;
-}
-
-/* cannot use above selector since we cannot control in which order CSS files got imported and selector weight is the same */
-.input.inputOverrides {
+.inputOverrides {
   padding: 8px 36px;
-}
-
-.input::-webkit-inner-spin-button,
-.input::-webkit-outer-spin-button {
-  display: none;
 }
 
 .inputContainer {
