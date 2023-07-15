@@ -5,6 +5,8 @@ import styles from "./InputField.module.css";
 interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label?: string;
+  isInvalid?: boolean;
+  errorMessage?: string;
 }
 
 export const InputField: FC<InputFieldProps> = ({
@@ -12,10 +14,13 @@ export const InputField: FC<InputFieldProps> = ({
   label,
   type,
   className,
+  isInvalid,
+  errorMessage,
   ...restProps
 }) => {
   const id = useId();
   const [field, { touched, error }] = useField(name);
+  const hasError = (touched && error) || (isInvalid && errorMessage);
 
   return (
     <>
@@ -26,14 +31,14 @@ export const InputField: FC<InputFieldProps> = ({
       )}
       <input
         className={`${styles.input} ${
-          error && touched ? styles.errorInput : ""
+          hasError ? styles.errorInput : ""
         } ${className}`}
         type={type}
         id={id}
         {...field}
         {...restProps}
       />
-      {error && touched && <div className={styles.error}>{error}</div>}
+      {hasError && <div className={styles.error}>{error ?? errorMessage}</div>}
     </>
   );
 };

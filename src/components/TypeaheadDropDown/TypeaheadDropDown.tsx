@@ -16,6 +16,8 @@ interface TypeaheadDropDownProps {
   onChange: (value: string) => void;
   onSelect: (value: string) => void;
   loading: boolean;
+  isInvalid?: boolean;
+  errorMessage?: string;
   delay?: number;
 }
 
@@ -26,6 +28,8 @@ export const TypeaheadDropDown: FC<TypeaheadDropDownProps> = ({
   onChange,
   onSelect,
   loading,
+  isInvalid,
+  errorMessage,
   delay = 300,
 }) => {
   const [suggestions, setSuggestions] = useState(items);
@@ -56,7 +60,12 @@ export const TypeaheadDropDown: FC<TypeaheadDropDownProps> = ({
 
   return (
     <div className={styles.container} ref={outsideClickRef}>
-      <InputField name={name} label={label} />
+      <InputField
+        name={name}
+        label={label}
+        isInvalid={isInvalid}
+        errorMessage={errorMessage}
+      />
       {loading && (
         <ul className={styles.list}>
           <li className={styles.skeletonItem}></li>

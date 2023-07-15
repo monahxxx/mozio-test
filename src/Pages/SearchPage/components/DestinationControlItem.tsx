@@ -20,7 +20,8 @@ export const DestinationControlItem: FC<DestinationControlItemProps> = ({
   onRemove,
   destination = false,
 }) => {
-  const { onSearch, items, setValue, isLoading } = useTypeaheadSearch(name);
+  const { onSearch, items, setValue, isLoading, error } =
+    useTypeaheadSearch(name);
 
   return (
     <div className={styles.item}>
@@ -32,6 +33,8 @@ export const DestinationControlItem: FC<DestinationControlItemProps> = ({
           onSelect={(newValue) => setValue(newValue)}
           loading={isLoading}
           items={items}
+          isInvalid={Boolean(error)}
+          errorMessage={error}
         />
       </div>
       {removable && (
