@@ -39,3 +39,11 @@
     background-color: var(--purple-light);
   }
 }
+
+.skeletonItem {
+  background-color: var(--grey);
+  height: 20px;
+  border-radius: 4px;
+  width: 189px;
+  margin-bottom: 6px;
+}

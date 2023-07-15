@@ -15,6 +15,7 @@ interface TypeaheadDropDownProps {
   items: TypeaheadOption[];
   onChange: (value: string) => void;
   onSelect: (value: string) => void;
+  loading: boolean;
   delay?: number;
 }
 
@@ -24,6 +25,7 @@ export const TypeaheadDropDown: FC<TypeaheadDropDownProps> = ({
   items,
   onChange,
   onSelect,
+  loading,
   delay = 300,
 }) => {
   const [suggestions, setSuggestions] = useState(items);
@@ -55,6 +57,15 @@ export const TypeaheadDropDown: FC<TypeaheadDropDownProps> = ({
   return (
     <div className={styles.container} ref={outsideClickRef}>
       <InputField name={name} label={label} />
+      {loading && (
+        <ul className={styles.list}>
+          <li className={styles.skeletonItem}></li>
+          <li className={styles.skeletonItem}></li>
+          <li className={styles.skeletonItem}></li>
+          <li className={styles.skeletonItem}></li>
+          <li className={styles.skeletonItem}></li>
+        </ul>
+      )}
       {suggestions.length > 0 && (
         <ul className={styles.list}>
           {suggestions.map((city) => (
