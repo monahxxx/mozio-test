@@ -5,12 +5,17 @@ import { Button } from "../../components/Button";
 import { useFormValues } from "./hooks";
 import { DestinationFields } from "./DestinationFields";
 import { FormFilters } from "./FormFilters";
+import { validationSchema } from "./validation";
 
 export const SearchPage: FC = () => {
   const { initialValues, onSubmit } = useFormValues();
 
   return (
-    <Formik initialValues={initialValues} onSubmit={onSubmit}>
+    <Formik
+      initialValues={initialValues}
+      onSubmit={onSubmit}
+      validationSchema={validationSchema}
+    >
       <Form className={styles.form} noValidate>
         <DestinationFields />
         <FormFilters />
