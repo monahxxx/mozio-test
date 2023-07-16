@@ -8,5 +8,7 @@ export const validationSchema = Yup.object().shape({
   passengers: Yup.number()
     .min(1, "Select passengers")
     .required("Select passengers"),
-  date: Yup.string().required("Select date"),
+  date: Yup.date()
+    .min(new Date(), "Please choose future date")
+    .required("Select date"),
 });
