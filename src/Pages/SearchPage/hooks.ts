@@ -1,4 +1,5 @@
 import { FormikHelpers } from "formik";
+import { useNavigate, createSearchParams } from "react-router-dom";
 import { FormValues } from "../../types/form";
 
 const initialValues: FormValues = {
@@ -14,8 +15,14 @@ type SubmitHandler = (
 ) => void | Promise<any>;
 
 export const useFormValues = () => {
+  const navigate = useNavigate();
   const onSubmit: SubmitHandler = (values) => {
-    console.log(values);
+    const searchParams = createSearchParams({
+      ...values,
+      destinations: values.destinations.join(","),
+      passengers: values.passengers.toString(),
+    });
+    navigate("/results?" + searchParams);
   };
 
   return {
