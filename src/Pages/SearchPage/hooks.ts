@@ -1,4 +1,3 @@
-import { FormikHelpers } from "formik";
 import { useNavigate, createSearchParams } from "react-router-dom";
 import { FormValues } from "../../types/form";
 
@@ -9,10 +8,7 @@ const initialValues: FormValues = {
   passengers: 0,
 };
 
-type SubmitHandler = (
-  values: FormValues,
-  formikHelpers: FormikHelpers<FormValues>
-) => void | Promise<any>;
+type SubmitHandler = (values: FormValues) => void | Promise<any>;
 
 export const useFormValues = () => {
   const navigate = useNavigate();
