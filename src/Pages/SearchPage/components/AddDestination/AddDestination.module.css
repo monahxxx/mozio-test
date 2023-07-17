@@ -1,0 +1,8 @@
+.container {
+  composes: item from "../DestinationControlItem/DestinationControlItem.module.css";
+}
+
+.addIcon {
+  position: absolute;
+  left: -12px;
+}

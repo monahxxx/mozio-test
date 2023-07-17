@@ -1,6 +1,6 @@
 import { useField } from "formik";
 import { useState } from "react";
-import { TypeaheadOption } from "../../../components/TypeaheadDropDown";
+import { TypeaheadOption } from "../../../../components/TypeaheadDropDown";
 import { fetchSuggestions } from "./api";
 
 export const useTypeaheadSearch = (field: string) => {

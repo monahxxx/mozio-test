@@ -1,0 +1,43 @@
+.item {
+  position: relative;
+  padding-left: 61px;
+}
+
+.step {
+  background-image: url("../../../../assets/step-icon.png");
+  width: 13px;
+  height: 13px;
+  margin: auto;
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+}
+
+.connector {
+  background-image: url("../../../../assets/dots.png");
+  width: 3px;
+  height: 45px;
+  position: absolute;
+  left: 5px;
+  bottom: -39px;
+}
+
+.destination {
+  composes: step;
+  background-image: url("../../../../assets/destinaiton-icon.png");
+  height: 17px;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.actions {
+  position: absolute;
+  right: -45px;
+  bottom: 0;
+}
+
+.deleteIcon {
+  height: 34px;
+}

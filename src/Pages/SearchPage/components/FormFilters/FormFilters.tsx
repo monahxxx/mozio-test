@@ -1,7 +1,7 @@
 import { FC } from "react";
-import styles from "./Styles.module.css";
-import { InputField } from "../../../components/InputField";
-import { NumberInput } from "../../../components/NumberInput";
+import styles from "./FormFilters.module.css";
+import { InputField } from "../../../../components/InputField";
+import { NumberInput } from "../../../../components/NumberInput";
 
 export const FormFilters: FC = () => (
   <div className={styles.filters}>

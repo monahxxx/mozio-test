@@ -1,8 +1,8 @@
 import React, { FC } from "react";
-import styles from "./Styles.module.css";
-import { Button } from "../../../components/Button";
-import { ReactComponent as DeleteIcon } from "../../../icons/delete.svg";
-import { TypeaheadDropDown } from "../../../components/TypeaheadDropDown";
+import styles from "./DestinationControlItem.module.css";
+import { Button } from "../../../../components/Button";
+import { ReactComponent as DeleteIcon } from "../../../../icons/delete.svg";
+import { TypeaheadDropDown } from "../../../../components/TypeaheadDropDown";
 import { useTypeaheadSearch } from "./hooks";
 
 interface DestinationControlItemProps {

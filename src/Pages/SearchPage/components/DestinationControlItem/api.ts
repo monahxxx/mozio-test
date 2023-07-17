@@ -1,4 +1,4 @@
-import { cities } from "../../../mocks/cities";
+import { cities } from "../../../../mocks/cities";
 
 const SEARCH_DELAY = 500;
 const FAILED_QUERY = "fail";

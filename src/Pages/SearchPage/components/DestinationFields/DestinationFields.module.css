@@ -1,0 +1,7 @@
+.destinations {
+  grid-row: 1/-1;
+
+  @media screen and (max-width: 768px) {
+    grid-row: 1/2;
+  }
+}
