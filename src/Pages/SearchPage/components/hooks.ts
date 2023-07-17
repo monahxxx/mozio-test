@@ -1,26 +1,7 @@
 import { useField } from "formik";
 import { useState } from "react";
-import { cities } from "../../../mocks/cities";
 import { TypeaheadOption } from "../../../components/TypeaheadDropDown";
-
-const SEARCH_DELAY = 500;
-const FAILED_QUERY = "fail";
-
-type responseType = typeof cities;
-
-const fetchSuggestions = (query: string) => {
-  return new Promise<responseType>((resolve, reject) => {
-    setTimeout(() => {
-      if (query.toLocaleLowerCase() === FAILED_QUERY) {
-        reject("Oops! Failed to serch this keyword.");
-      }
-      const filteredCities = cities.filter((x) =>
-        x[0].toLocaleLowerCase().startsWith(query.toLocaleLowerCase())
-      );
-      resolve(filteredCities);
-    }, SEARCH_DELAY);
-  });
-};
+import { fetchSuggestions } from "./api";
 
 export const useTypeaheadSearch = (field: string) => {
   const [, , { setValue }] = useField(field);
