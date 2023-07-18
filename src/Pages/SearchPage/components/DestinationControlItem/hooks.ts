@@ -9,6 +9,7 @@ export const useTypeaheadSearch = (field: string) => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState();
 
+  // TODO: cancel current request if new change happens
   const onSearch = (query: string) => {
     setError(undefined);
     if (query.length > 0) {
