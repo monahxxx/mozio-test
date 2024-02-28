@@ -2,6 +2,38 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Requirements
+
+### Design
+
+https://www.figma.com/file/GSIB3ruHqfmv2Rubs4wK6J/?type=design&node-id=146-138&mode=design
+
+### Notes
+
+Imagine that the backend API can NOT return you the full list of cities, and you’ll need to search the cities with a keyword.
+
+The app should consist of two pages: the search form (home page) and the search results.
+
+On the home page there should be a search form. The form should consist of the following fields:
+
+City of origin. Required to fill. A searchable dropdown (combobox) with a list of cities. The list of cities should be requested and searched asynchronously with the loading indication.
+
+Intermediate cities. Same as City of origin. There should be a way to add/remove multiple intermediate cities. No intermediate cities should be shown when the page is first loaded. If an intermediate city is added it has to be filled.
+
+City of destination. Required to fill. Same as City of origin.
+
+Date of the trip. Required to fill. Should be a date in the future.
+
+Number of passengers. Required to fill. Should be a number greater than 0.
+
+The form should be validated. If some field has an invalid value the error should be shown around the problematic field and the submit button should be disabled. The submit button when clicked should navigate to the search results page.
+
+The home page should allow deep-linking: form data should store in the URL, so when a user copy and share the link, the form can be pre-filled with the data from the URL parameters.
+
+On the search results page all the fields filled on the home page should be displayed. The distance of the route (in kilometers) should be calculated and displayed: between subsequent cities of the route and the total distance. The distance calculation should be performed asynchronously with loading indication and error handling.
+
+The search results page should take all parameters from the URL, meaning that the link to a particular search result can be shared with others.
+
 ## Available Scripts
 
 In the project directory, you can run:
